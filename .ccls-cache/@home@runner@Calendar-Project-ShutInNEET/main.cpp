@@ -1,42 +1,42 @@
 #include <iostream>
 #include <string>
-#include "dayType.h"
+#include "dateType.h"
 
 using namespace std;
 
 int main() 
 {
-  dayType day1;
+  dateType date1;
 
   cout << "From default constructor: ";
-  day1.printDay();
+  date1.printDate();
 
-  cout << "Previous day: ";
-  day1.setDay(day1.getPrevDay());
-  day1.printDay();
-  day1.setDay(day1.getNextDay());
-
-  cout << "Next day: ";
-  day1.setDay(day1.getNextDay());
-  day1.printDay();
-  day1.setDay(day1.getPrevDay());
-
-  dayType day2("Monday");
+  dateType date2(4, 30, 1904);
   
   cout << "From constructor with parameter: ";
-  day2.printDay();
-
-  day2.addDays(3);
-  cout << "After adding 3 days: ";
-  day2.printDay();
-
-  day2.addDays(30);
-  cout << "After adding another 30 days: ";
-  day2.printDay();
+  date2.printDate();
   
-  day2.addDays(365);
-  cout << "After adding another 365 days: ";
-  day2.printDay();
+  date2.setMonth(1);
+  date2.getMonth();
+  date2.printDate();
+  
+  date2.setDay(20);
+  date2.getDay();
+  date2.printDate();
+  
+  date2.setYear(2004);
+  date2.getYear();
+  date2.printDate();
+
+  date2.leapYear();
+  date2.getDaysinMonth();
+  
+  date2.getdaysLeft();
+  date2.getdaysPassed();
+  
+  date2.addDays(30);
+  cout << "After adding 30 days: ";
+  date2.printDate();
 
   return 0;
 }
