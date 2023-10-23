@@ -77,19 +77,11 @@ public:
 
 private:
   
-  // List of months that have 31 days
-  static int longMonths[7];
-  // List of months that have 30 days
-  static int shortMonths[4];
   //List of total days in non-leap year
   static int daysInMonths[12];
-  //List of total days in leap year
-  static int daysInLeapMonths[12];
   
   // Int variables to store the current month, day, and year
   int currentMonth;
   int currentDay;
   int currentYear;
-  int daysPassed;
-  int daysLeft;
 };
