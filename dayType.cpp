@@ -22,8 +22,9 @@ void dayType::setDay(string dayName)
       return;
     }
   }
-
-  cout << "Invalid day name." << endl;
+  
+  cout << "Invalid day name. Setting to Sunday." << endl;
+  currentDay = 0;
 }
 
 string dayType::getPrevDay() const
