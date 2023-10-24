@@ -32,10 +32,10 @@ void extDateType::addDays(int days)
 
 void extDateType::printLongDate() const
 {
-    cout << strMonth << " " << getDay() << ", " << getYear() << endl;
+  cout << strMonth << " " << getDay() << ", " << getYear() << endl;
 }
 
 void extDateType::printLongMonthYear() const
 {
-    cout << strMonth << " " << getYear() << endl;
+  cout << strMonth << " " << getYear() << endl;
 }
