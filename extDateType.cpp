@@ -9,19 +9,19 @@ string extDateType::monthString[13] = {"", "January", "February", "March", "Apri
 
 extDateType::extDateType(int month, int day, int year) : dateType(month, day, year)
 {
-  strMonth = monthString[month];
+  strMonth = monthString[dateType::getMonth()];
 }
 
 void extDateType::setDate(int month, int day, int year)
 {
   dateType::setDate(month, day, year);
-  strMonth = monthString[month];
+  strMonth = monthString[dateType::getMonth()];
 }
 
 void extDateType::setMonth(int month)
 {
   dateType::setMonth(month);
-  strMonth = monthString[month];
+  strMonth = monthString[dateType::getMonth()];
 }
 
 void extDateType::addDays(int days)     
