@@ -27,6 +27,16 @@ void dayType::setDay(string dayName)
   currentDay = 0;
 }
 
+string dayType::getWeekDay(int index) 
+{
+  return weekDays[index];
+}
+
+int dayType::getDayNumber() const
+{
+    return currentDay;
+}
+
 string dayType::getPrevDay() const
 {
   return weekDays[(currentDay - 1 + 7) % 7];

@@ -10,7 +10,17 @@ public:
   // Precondition: dayName is a valid day of the week
   // Postcondition: currentDay is updated with the index of the input dayName
   void setDay(string);
-  
+
+  // Returns day of the week
+  // Precondition: Input number 0-6
+  // Postcondition: Returns the name of the day of the week
+  static string getWeekDay(int);
+
+  // Returns day of the week
+  // Precondition: currentDay has been initialized
+  // Postcondition: Returns the day number of the week
+  int getDayNumber() const;
+
   // Returns the next day
   // Precondition: currentDay has been initialized
   // Postcondition: Returns the day of the week after the currentDay
