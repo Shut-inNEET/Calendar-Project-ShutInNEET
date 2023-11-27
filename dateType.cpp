@@ -13,19 +13,36 @@ dateType::dateType(int Month, int Day, int Year)
   setDate(Month, Day, Year);
 }
 
-void dateType::setDate(int Month, int Day, int Year)
+void dateType::setDate(int Month, int Day, int Year) 
+throw (invalidYear, invalidMonth, invalidDay)
 {
   daysInMonths[1] = leapYear() ? 29 : 28; // adjust February days based on leap year
   
-  if(Day <= daysInMonths[Month-1] && Year >= 1900)
+  if (Year < 1900)
   {
-    currentMonth = Month;
-    currentDay = Day;
-    currentYear = Year;
+    throw invalidYear();
   }
   else
   {
-    cout << "Invalid date." << endl;
+    currentYear = Year;
+  }
+  
+  if (Month < 1 || Month > 12)
+  {
+    throw invalidMonth();
+  }
+  else
+  {
+    currentMonth = Month;
+  }
+  
+  if (Day < 1 || Day > daysInMonths[Month-1])
+  {
+    throw invalidDay();
+  }
+  else
+  {
+    currentDay = Day;
   }
 }
 
@@ -40,7 +57,7 @@ void dateType::setDay(int Day)
 }
 
 void dateType::setYear(int Year)
-{ 
+{
   setDate(currentMonth, currentDay, Year);
 }
 

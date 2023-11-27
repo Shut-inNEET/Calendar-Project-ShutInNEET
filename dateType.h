@@ -6,11 +6,72 @@ using namespace std;
 class dateType
 {
 public:
+
+  // Exception class for invalid year
+  class invalidYear
+  {
+    public:
+
+      invalidYear() 
+        {
+          message = "Invalid – year must be >= 1900";
+        }
+
+      string what() 
+        { 
+          return message; 
+        }
+    
+    private:
+
+      string message;
+  };
+
+  // Exception class for invalid month
+  class invalidMonth 
+  {
+    public:
+
+      invalidMonth() 
+        {
+          message = "Invalid – month must be between 1 and 12";
+        }
+
+      string what() 
+        { 
+          return message; 
+        }
+    
+    private:
+
+      string message;
+  };
+
+  // Exception class for invalid day
+  class invalidDay 
+  {
+    public:
+
+      invalidDay() 
+        {
+          message = "Invalid – day must be between 1 and the max days of the given month";
+        }
+
+      string what() 
+        { 
+          return message; 
+        }
+
+    private:
+
+      string message;
+  };
+
   
   // Set the date
   // Precondition: Inputs are integers
   // Postcondition: The currentMonth, currentDay, and currentYear are set
-  void setDate(int, int, int);
+  void setDate(int, int, int) throw (invalidYear, invalidMonth, invalidDay);
   
   // Set the month
   // Precondition: Input is an integer

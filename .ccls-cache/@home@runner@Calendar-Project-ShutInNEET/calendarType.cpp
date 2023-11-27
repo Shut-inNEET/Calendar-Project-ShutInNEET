@@ -1,6 +1,5 @@
 #include<iostream>
 #include<iomanip>
-#include<cassert>
 
 #include "calendarType.h"
 
@@ -8,8 +7,6 @@ using namespace std;
 
 calendarType::calendarType(int month, int year)
 {
-  assert(month >= 1 && month <= 12);
-  assert(year >= 1900);
   firstDay.setDay("Monday");
   firstDate.setDate(month, 1, year);
   firstDayOfMonth();
@@ -24,14 +21,12 @@ void calendarType::firstDayOfMonth()
 
 void calendarType::setMonth(int month)
 {
-    assert(month >= 1 && month <= 12);
     firstDate.setMonth(month);
     firstDayOfMonth();
 }
 
 void calendarType::setYear(int year)
 {
-    assert(year >= 1900);
     firstDate.setYear(year);
     firstDayOfMonth();
 }
